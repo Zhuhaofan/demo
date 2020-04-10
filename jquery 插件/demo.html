@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *, li, ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .darg-wrapper {
+            margin: 50px 0 0 100px;
+            width: 260px;
+            height: 350px;
+            /*border: 1px solid #000000;*/
+        }
+
+        .darg-wrapper > .darg-bar {
+            width: 100%;
+            height: 15%;
+            background: #9fa596;
+            text-align: center;
+            line-height: 52px;
+            font-size: 28px;
+            font-family: 楷体;
+        }
+
+        .darg-wrapper > .resize-item {
+            width: 100%;
+            height: 85%;
+            background: #47c9af;
+        }
+
+        .darg-wrapper > .resize-item > .sort-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .darg-wrapper > .resize-item > .sort-wrapper > .sort-item {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .darg-wrapper > .resize-item > .sort-wrapper > .sort-item > li {
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            font-size: 25px;
+            font-family: 隶书;
+            border-bottom: 2px solid #ff0000;
+            /*background: #47c9af;*/
+        }
+
+        .darg-wrapper > .resize-item > .sort-wrapper > .sort-item > li:last-of-type{
+            border-bottom: none;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <script src="../0326/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $('.darg-wrapper').draggable({
+                // handle:'.drag-bar'
+            });
+
+            $('.resize-item').resizable({
+                handles: 's'
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="darg-wrapper">
+    <div class="darg-bar">新闻头条</div>
+    <div class="resize-item">
+        <div class="sort-wrapper">
+            <ul class="sort-item">
+                <li>第1条</li>
+                <li>第2条</li>
+                <li>第3条</li>
+                <li>第4条</li>
+                <li>第5条</li>
+                <li>第6条</li>
+                <li>第7条</li>
+                <li>第8条</li>
+                <li>第9条</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
